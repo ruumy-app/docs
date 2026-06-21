@@ -83,6 +83,12 @@ a.site-title {
   color: var(--sl-color-white);
 }
 
+.hero-docs {
+  color: var(--sl-color-gray-3);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
 /* ─── PAGE TRANSITION ───────────────────────────────────── */
 @keyframes fadeSlideIn {
   from {
