@@ -1,0 +1,26 @@
+:root {
+  --sl-color-accent-low: #2d1f6e;
+  --sl-color-accent: #7B6EF6;
+  --sl-color-accent-high: #c4beff;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #eeeef0;
+  --sl-color-gray-2: #c2c3c7;
+  --sl-color-gray-3: #8b8d98;
+  --sl-color-gray-4: #585b6b;
+  --sl-color-gray-5: #353745;
+  --sl-color-gray-6: #1e1f2e;
+  --sl-color-black: #0d0d0d;
+  --sl-font: 'Inter', system-ui, sans-serif;
+}
+
+/* Accent dot style on logo */
+.site-title {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* Subtle purple glow on active sidebar items */
+[aria-current='page'] {
+  background: linear-gradient(90deg, rgba(123,110,246,0.15), transparent) !important;
+  border-left: 2px solid var(--sl-color-accent) !important;
+}
