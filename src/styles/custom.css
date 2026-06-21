@@ -1,7 +1,7 @@
-/* Import rounded font to match logo */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+/* Bricolage Grotesque for wordmark only */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap');
 
-/* Dark mode colors */
+/* ─── Colors ────────────────────────────────────────────── */
 :root[data-theme='dark'],
 :root {
   --sl-color-accent-low: #2d1f6e;
@@ -11,10 +11,8 @@
   --sl-color-gray-6: #111118;
   --sl-color-gray-5: #1e1f2e;
   --sl-color-gray-4: #353745;
-  --sl-font: 'Nunito', system-ui, sans-serif;
 }
 
-/* Light mode — full override so it doesn't break */
 :root[data-theme='light'] {
   --sl-color-accent-low: #ede9fe;
   --sl-color-accent: #5b4ef0;
@@ -34,17 +32,169 @@
   --sl-color-text-accent: #5b4ef0;
 }
 
-/* Active sidebar item */
+/* ─── Wordmark font (logo only) ─────────────────────────── */
+.site-title,
+.site-title span,
+a.site-title {
+  font-family: 'Bricolage Grotesque', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+}
+
+/* ─── Sidebar active item ───────────────────────────────── */
 [aria-current='page'] {
-  background: linear-gradient(90deg, rgba(123,110,246,0.15), transparent) !important;
+  background: linear-gradient(90deg, rgba(123,110,246,0.12), transparent) !important;
   border-left: 2px solid var(--sl-color-accent) !important;
 }
 
-/* Hero image: make it round and centered like an app icon */
+[aria-current='page'],
+[aria-current='page'] a,
+[aria-current='page'] span {
+  color: var(--sl-color-accent) !important;
+  font-weight: 700 !important;
+}
+
+/* ─── Hero image ────────────────────────────────────────── */
 .hero img {
   border-radius: 24px;
   max-width: 180px;
   margin: 0 auto;
   display: block;
   box-shadow: 0 8px 32px rgba(123, 110, 246, 0.25);
+}
+
+/* ─── PAGE TRANSITION ───────────────────────────────────── */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  animation: fadeSlideIn 0.3s ease forwards;
+}
+
+/* ─── SIDEBAR ITEMS: staggered fade-in ──────────────────── */
+@keyframes sidebarItemIn {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+nav ul li {
+  animation: sidebarItemIn 0.25s ease forwards;
+  opacity: 0;
+}
+
+nav ul li:nth-child(1)  { animation-delay: 0.03s; }
+nav ul li:nth-child(2)  { animation-delay: 0.06s; }
+nav ul li:nth-child(3)  { animation-delay: 0.09s; }
+nav ul li:nth-child(4)  { animation-delay: 0.12s; }
+nav ul li:nth-child(5)  { animation-delay: 0.15s; }
+nav ul li:nth-child(6)  { animation-delay: 0.18s; }
+nav ul li:nth-child(7)  { animation-delay: 0.21s; }
+nav ul li:nth-child(8)  { animation-delay: 0.24s; }
+nav ul li:nth-child(9)  { animation-delay: 0.27s; }
+nav ul li:nth-child(10) { animation-delay: 0.30s; }
+nav ul li:nth-child(11) { animation-delay: 0.33s; }
+nav ul li:nth-child(12) { animation-delay: 0.36s; }
+nav ul li:nth-child(13) { animation-delay: 0.39s; }
+nav ul li:nth-child(14) { animation-delay: 0.42s; }
+nav ul li:nth-child(15) { animation-delay: 0.45s; }
+
+/* ─── SIDEBAR GROUP LABELS ──────────────────────────────── */
+@keyframes groupLabelIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+nav details summary,
+.group-label {
+  animation: groupLabelIn 0.2s ease forwards;
+}
+
+/* ─── CONTENT HEADINGS ──────────────────────────────────── */
+@keyframes headingIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.sl-markdown-content h1 { animation: headingIn 0.3s ease 0.05s forwards; opacity: 0; }
+.sl-markdown-content h2 { animation: headingIn 0.3s ease 0.10s forwards; opacity: 0; }
+.sl-markdown-content h3 { animation: headingIn 0.3s ease 0.15s forwards; opacity: 0; }
+
+/* ─── CARDS (homepage) ──────────────────────────────────── */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  animation: cardIn 0.35s ease forwards;
+  opacity: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(123, 110, 246, 0.15);
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.18s; }
+.card:nth-child(3) { animation-delay: 0.26s; }
+.card:nth-child(4) { animation-delay: 0.34s; }
+
+/* ─── HEADER LOGO ENTRANCE ──────────────────────────────── */
+@keyframes logoIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.site-title {
+  animation: logoIn 0.3s ease forwards;
+}
+
+/* ─── HERO TAGLINE ──────────────────────────────────────── */
+@keyframes taglineIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero .tagline {
+  animation: taglineIn 0.4s ease 0.15s forwards;
+  opacity: 0;
+}
+
+.hero h1 {
+  animation: taglineIn 0.4s ease 0.05s forwards;
+  opacity: 0;
+}
+
+.hero .sl-flex.actions {
+  animation: taglineIn 0.4s ease 0.25s forwards;
+  opacity: 0;
+}
+
+/* ─── LINKS hover accent ────────────────────────────────── */
+.sl-markdown-content a {
+  transition: color 0.15s ease;
+}
+
+/* ─── RESPECT reduced motion ────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
