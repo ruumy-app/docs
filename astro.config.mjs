@@ -2,7 +2,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-// https://astro.build/config
 export default defineConfig({
 	integrations: [
 		starlight({
@@ -13,7 +12,7 @@ export default defineConfig({
 				dark: './src/assets/logo-dark.svg',
 				replacesTitle: true,
 			},
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/ruumy' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/ruumy-app' }],
 			customCss: ['./src/styles/custom.css'],
 			sidebar: [
 				{
@@ -47,7 +46,7 @@ export default defineConfig({
 				{
 					label: 'Roadmap',
 					items: [
-						{ label: 'What\'s coming', slug: 'roadmap/whats-coming' },
+						{ label: "What's coming", slug: 'roadmap/whats-coming' },
 					],
 				},
 			],

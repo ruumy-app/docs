@@ -3,29 +3,27 @@ title: Room Modes
 description: Different ways to use a ruumy room depending on your context.
 ---
 
-import { Badge } from '@astrojs/starlight/components';
-
 A room is a generic space — but you can set a **mode** to shape how it's used. Modes change the layout, the default canvas state, and the ambient feel of the room.
 
 ## Available modes
 
-### 🧠 Brainstorm <Badge text="Available" variant="success" />
+### 🧠 Brainstorm — Available
 
 The default mode. A blank canvas with post-its, free-form text, and chat. Good for: ideas, planning sessions, quick syncs.
 
-### 🎓 Study <Badge text="Available" variant="success" />
+### 🎓 Study — Available
 
 A quieter layout. The canvas shows a shared note editor. Presence is visible but unobtrusive. Good for: revision sessions, reading groups, focused co-working.
 
-### 💻 Dev Session <Badge text="Coming soon" variant="caution" />
+### 💻 Dev Session — Coming soon
 
 A room optimized for coding together. Will include a shared code snippet area and links to external tools (GitHub, Vercel, etc.).
 
-### 🎥 Watch Party <Badge text="Coming soon" variant="caution" />
+### 🎥 Watch Party — Coming soon
 
 Embed a YouTube video and watch it in sync with everyone in the room. Chat appears alongside the video.
 
-### 🎮 Social Hangout <Badge text="Coming soon" variant="caution" />
+### 🎮 Social Hangout — Coming soon
 
 A looser, more social room. Think of it as a digital living room. Emphasis on presence and casual chat.
 

@@ -1,26 +1,50 @@
+/* Import rounded font to match logo */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+/* Dark mode colors */
+:root[data-theme='dark'],
 :root {
   --sl-color-accent-low: #2d1f6e;
   --sl-color-accent: #7B6EF6;
   --sl-color-accent-high: #c4beff;
-  --sl-color-white: #ffffff;
-  --sl-color-gray-1: #eeeef0;
-  --sl-color-gray-2: #c2c3c7;
-  --sl-color-gray-3: #8b8d98;
-  --sl-color-gray-4: #585b6b;
-  --sl-color-gray-5: #353745;
-  --sl-color-gray-6: #1e1f2e;
   --sl-color-black: #0d0d0d;
-  --sl-font: 'Inter', system-ui, sans-serif;
+  --sl-color-gray-6: #111118;
+  --sl-color-gray-5: #1e1f2e;
+  --sl-color-gray-4: #353745;
+  --sl-font: 'Nunito', system-ui, sans-serif;
 }
 
-/* Accent dot style on logo */
-.site-title {
-  font-weight: 800;
-  letter-spacing: -0.5px;
+/* Light mode — full override so it doesn't break */
+:root[data-theme='light'] {
+  --sl-color-accent-low: #ede9fe;
+  --sl-color-accent: #5b4ef0;
+  --sl-color-accent-high: #3730a3;
+  --sl-color-white: #0d0d0d;
+  --sl-color-gray-1: #1e1f2e;
+  --sl-color-gray-2: #353745;
+  --sl-color-gray-3: #585b6b;
+  --sl-color-gray-4: #8b8d98;
+  --sl-color-gray-5: #e8e8f0;
+  --sl-color-gray-6: #f4f4f9;
+  --sl-color-black: #ffffff;
+  --sl-color-bg: #ffffff;
+  --sl-color-bg-nav: #f8f8fc;
+  --sl-color-bg-sidebar: #f4f4f9;
+  --sl-color-text: #1e1f2e;
+  --sl-color-text-accent: #5b4ef0;
 }
 
-/* Subtle purple glow on active sidebar items */
+/* Active sidebar item */
 [aria-current='page'] {
   background: linear-gradient(90deg, rgba(123,110,246,0.15), transparent) !important;
   border-left: 2px solid var(--sl-color-accent) !important;
+}
+
+/* Hero image: make it round and centered like an app icon */
+.hero img {
+  border-radius: 24px;
+  max-width: 180px;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 8px 32px rgba(123, 110, 246, 0.25);
 }

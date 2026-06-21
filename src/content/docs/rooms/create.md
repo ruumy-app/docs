@@ -3,8 +3,6 @@ title: Create a Room
 description: How rooms are created and what happens when you do.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
-
 ## Creating a room
 
 Rooms are created from the ruumy homepage. Click **New Room** and you're immediately taken to a fresh room with a unique URL.
@@ -33,9 +31,9 @@ By default, rooms are **ephemeral**:
 - If everyone leaves, the room enters a grace period (currently 10 minutes)
 - After the grace period, the room and all its content is deleted
 
-<Aside type="caution">
-  Ephemeral rooms don't save their content automatically. Copy anything important before you leave.
-</Aside>
+:::caution
+Ephemeral rooms don't save their content automatically. Copy anything important before you leave.
+:::
 
 ## Naming a room
 
